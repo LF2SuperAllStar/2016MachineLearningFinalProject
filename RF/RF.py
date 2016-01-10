@@ -22,7 +22,7 @@ def draw(data,label,val_size):
 
 print 'start at ', datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 
-data = np.loadtxt(dpath+'sample_train_x.csv', delimiter=',', skiprows=1)
+data = np.loadtxt(dpath+'train_m.csv', delimiter=',', skiprows=1)
 label = np.loadtxt(dpath+'truth_train.csv', delimiter=',')
 tr_x,tr_y,val_x,val_y = draw(data,label,val_size)
 
