@@ -8,7 +8,7 @@ import random
 
 dpath = '../data/'
 val_size = 19287
-tree_num  = 33000
+tree_num  = 1000
 
 def draw(data,label,val_size):
 	x_y = np.array([np.append(data[n],label[n][-1]) for n in range(len(data))])
