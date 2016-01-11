@@ -8,7 +8,7 @@ import random
 
 dpath = '../data/'
 val_size = 19287
-tree_num  = 1000
+tree_num  = 3000
 
 def draw(data,label,val_size):
 	x_y = np.array([np.append(data[n],label[n][-1]) for n in range(len(data))])
@@ -22,13 +22,13 @@ def draw(data,label,val_size):
 
 print 'start at ', datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 
-data = np.loadtxt(dpath+'train_m.csv', delimiter=',', skiprows=1)
+data = np.loadtxt(dpath+'train_m.csv', delimiter=',', skiprows=1,)
 label = np.loadtxt(dpath+'truth_train.csv', delimiter=',')
 tr_x,tr_y,val_x,val_y = draw(data,label,val_size)
 
 print 'training at ', datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 
-clf = RandomForestClassifier(n_estimators=tree_num, n_jobs=-1,criterion='entropy')
+clf = RandomForestClassifier(n_estimators=tree_num, n_jobs=-1,criterion='gini')
 clf.fit(tr_x,tr_y)
 
 print 'predicting at', datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
