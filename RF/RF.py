@@ -72,6 +72,7 @@ def draw(data,label,val_size):
 	return tr_x,tr_y,val_x,val_y
 
 data = np.loadtxt(dpath+train_file, delimiter=',', skiprows=1)
+
 label = np.loadtxt(dpath+'truth_train.csv', delimiter=',')
 tr_x,tr_y,val_x,val_y = draw(data,label,val_size)
 
